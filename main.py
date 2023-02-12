@@ -14,7 +14,7 @@ class calculator:
         #======display result======
     
         self.text_cal_input=Entry(root,textvariable=self.var_cal_input,font=("arial",30,"bold"),width=20,bd=10,relief=SUNKEN,state="readonly",justify=RIGHT)
-        self.text_cal_input.place(x=15,y=5,)
+        self.text_cal_input.place(x=15,y=10,)
         
         #====Calculatorrs Buttons====
         
@@ -22,6 +22,9 @@ class calculator:
         
         btn_clear=Button(root,text="C",font=("arial",25,"bold"),command=self.clear_cal,cursor="hand2",bd=5,width=5,height=1,bg="#3697f5",fg="#fff")
         btn_clear.place(x=10,y=100)
+        
+        btn_del=Button(root,text="Del",font=("arial",25,"bold"),cursor="hand2",bd=5,width=5,height=1,bg="#ff6347",fg="#fff")
+        btn_del.place(x=130,y=100)
         
         btn_div=Button(root,text="/",font=("arial",25,"bold"),command=lambda:self.get_input('/'),cursor="hand2",bd=5,height=1,width=5,bg="#2a2d36",fg="#fff")
         btn_div.place(x=250,y=100)
@@ -79,12 +82,13 @@ class calculator:
         btn_dot=Button(root,text=".",font=("arial",25,"bold"),command=lambda:self.get_input("."),cursor="hand2",bd=5,width=5,bg="#2a2d36",fg="#fff")
         btn_dot.place(x=250,y=420)
         
-        
-        
+#===============================================================================================
+ 
     def get_input(self,num):
         xnum=self.var_cal_input.get()+str(num)
         self.var_cal_input.set(xnum)
-        
+    
+
     def clear_cal(self):
         self.var_cal_input.set('')
         
