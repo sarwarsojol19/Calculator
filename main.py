@@ -3,7 +3,7 @@ from tkinter import *
 class calculator:
     def __init__(self, root):
         self.root = root
-        self.root.geometry("500x570+100+200")
+        self.root.geometry("500x500+100+200")
         self.root.title("Simple Calculator")
         self.root.resizable(False,False)
         self.root.configure(bg="#17161b")
