@@ -23,7 +23,7 @@ class calculator:
         btn_clear=Button(root,text="C",font=("arial",25,"bold"),command=self.clear_cal,cursor="hand2",bd=5,width=5,height=1,bg="#3697f5",fg="#fff")
         btn_clear.place(x=10,y=100)
         
-        btn_del=Button(root,text="Del",font=("arial",25,"bold"),cursor="hand2",bd=5,width=5,height=1,bg="#ff6347",fg="#fff")
+        btn_del=Button(root,text="Del",font=("arial",25,"bold"),command=self.delete,cursor="hand2",bd=5,width=5,height=1,bg="#ff6347",fg="#fff")
         btn_del.place(x=130,y=100)
         
         btn_div=Button(root,text="/",font=("arial",25,"bold"),command=lambda:self.get_input('/'),cursor="hand2",bd=5,height=1,width=5,bg="#2a2d36",fg="#fff")
@@ -87,7 +87,11 @@ class calculator:
     def get_input(self,num):
         xnum=self.var_cal_input.get()+str(num)
         self.var_cal_input.set(xnum)
-    
+        
+    def delete(self):
+        new_input = self.var_cal_input.get()
+        new_input = new_input[:-1]
+        self.var_cal_input.set(new_input)    
 
     def clear_cal(self):
         self.var_cal_input.set('')
